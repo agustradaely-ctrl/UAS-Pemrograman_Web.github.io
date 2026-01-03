@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <base href="https://agustradaely-ctrl.github.io/UAS-Pemrograman_Web.github.io/">
+    <meta charset="UTF-8">
+    <title>Pertemuan 11 – Sessions & Cookies</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font & Icon -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Manrope', sans-serif;
+            background: linear-gradient(135deg, #020617, #0f766e);
+            color: #020617;
+        }
+
+        header {
+            background: #020617;
+            padding: 1rem 2rem;
+        }
+
+        header a {
+            color: #5eead4;
+            text-decoration: none;
+            font-weight: 700;
+            margin-right: 1.6rem;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 3rem auto;
+            background: #ecfeff;
+            padding: 3.5rem;
+            border-radius: 22px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.35);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #0f766e;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #14b8a6, #0d9488);
+            color: #022c22;
+            padding: 0.5rem 1.8rem;
+            border-radius: 999px;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            margin: 0.6rem 0;
+            font-size: 2.9rem;
+            color: #022c22;
+        }
+
+        .subtitle {
+            max-width: 760px;
+            margin: 0 auto;
+            line-height: 1.9;
+            color: #134e4a;
+        }
+
+        .materi-section {
+            margin: 3.7rem 0;
+        }
+
+        .materi-section h2 {
+            color: #0f766e;
+            border-left: 8px solid #14b8a6;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .materi-section p {
+            line-height: 1.9;
+            color: #022c22;
+        }
+
+        .code-title {
+            margin-top: 1.7rem;
+            font-weight: 800;
+            color: #0f766e;
+        }
+
+        pre.code-block {
+            background: #020617;
+            color: #99f6e4;
+            padding: 1.8rem;
+            border-radius: 14px;
+            overflow-x: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+
+        .nav-bottom {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid #99f6e4;
+        }
+
+        .nav-bottom a {
+            text-decoration: none;
+            font-weight: 800;
+            color: #0f766e;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #99f6e4;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin: 1.5rem;
+                padding: 2.3rem;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<main>
+
+    <a href="../index.html" class="back-link">
+        ← Kembali ke Daftar Materi
+    </a>
+
+    <div class="page-header">
+        <div class="badge">Pertemuan 11</div>
+        <h1>Sessions & Cookies</h1>
+        <p class="subtitle">
+            Pertemuan ini membahas manajemen <strong>state</strong> pada web,
+            mekanisme <strong>cookies</strong> dan <strong>session</strong>,
+            serta penerapannya dalam sistem login dan logout.
+        </p>
+    </div>
+
+    <!-- Stateless -->
+    <section class="materi-section">
+        <h2>HTTP Stateless Nature</h2>
+        <p>
+            HTTP bersifat <em>stateless</em>, artinya setiap request
+            tidak menyimpan informasi request sebelumnya.
+            Session dan cookies digunakan untuk menjaga state pengguna.
+        </p>
+    </section>
+
+    <!-- Cookies -->
+    <section class="materi-section">
+        <h2>Cookies Implementation</h2>
+        <p>
+            Cookies digunakan untuk menyimpan data kecil di sisi client,
+            seperti preferensi pengguna atau token autentikasi.
+        </p>
+
+        <div class="code-title">Source Code (PHP):</div>
+        <pre class="code-block">
+&lt;?php
+setcookie("username", "agus", time() + 3600);
+?&gt;
+        </pre>
+    </section>
+
+    <!-- Session -->
+    <section class="materi-section">
+        <h2>Session Management</h2>
+        <p>
+            Session menyimpan data pengguna di sisi server dan
+            diidentifikasi menggunakan session ID.
+        </p>
+
+        <div class="code-title">Source Code (PHP):</div>
+        <pre class="code-block">
+&lt;?php
+session_start();
+$_SESSION["login"] = true;
+$_SESSION["user"] = "agus";
+?&gt;
+        </pre>
+    </section>
+
+    <!-- Login -->
+    <section class="materi-section">
+        <h2>Login / Logout System</h2>
+        <p>
+            Sistem login menggunakan session untuk menandai
+            apakah pengguna telah terautentikasi.
+        </p>
+
+        <div class="code-title">Source Code (Logout):</div>
+        <pre class="code-block">
+&lt;?php
+session_start();
+session_destroy();
+header("Location: login.php");
+?&gt;
+        </pre>
+    </section>
+
+    <!-- Security -->
+    <section class="materi-section">
+        <h2>Security Considerations</h2>
+        <p>
+            Praktik keamanan meliputi regenerasi session ID,
+            penggunaan HTTPS, serta menghindari penyimpanan
+            data sensitif langsung di cookies.
+        </p>
+    </section>
+
+    <div class="nav-bottom">
+        <a href="pertemuan-10.html">← Pertemuan 10</a>
+        <a href="pertemuan-12.html">Pertemuan 12 →</a>
+    </div>
+
+</main>
+
+<footer>
+    &copy; 2025 Materi Pemrograman Web — Sessions & Cookies
+</footer>
+
+</body>
+</html>

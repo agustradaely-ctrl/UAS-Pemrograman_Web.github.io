@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <base href="https://agustradaely-ctrl.github.io/UAS-Pemrograman_Web.github.io/">
+    <meta charset="UTF-8">
+    <title>Pertemuan 10 – Database MySQL</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font & Icon -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Source Sans 3', sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #0f172a;
+        }
+
+        header {
+            background: #020617;
+            padding: 1rem 2rem;
+        }
+
+        header a {
+            color: #fde68a;
+            text-decoration: none;
+            font-weight: 700;
+            margin-right: 1.5rem;
+        }
+
+        main {
+            max-width: 1100px;
+            margin: 3rem auto;
+            background: #f8fafc;
+            padding: 3.5rem;
+            border-radius: 20px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #92400e;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #f59e0b, #d97706);
+            color: #1e293b;
+            padding: 0.45rem 1.7rem;
+            border-radius: 999px;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            margin: 0.6rem 0;
+            font-size: 2.8rem;
+            color: #020617;
+        }
+
+        .subtitle {
+            max-width: 760px;
+            margin: 0 auto;
+            line-height: 1.9;
+            color: #334155;
+        }
+
+        .materi-section {
+            margin: 3.5rem 0;
+        }
+
+        .materi-section h2 {
+            color: #92400e;
+            border-left: 7px solid #f59e0b;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .materi-section p {
+            line-height: 1.9;
+            color: #1e293b;
+        }
+
+        .code-title {
+            margin-top: 1.6rem;
+            font-weight: 700;
+            color: #92400e;
+        }
+
+        pre.code-block {
+            background: #020617;
+            color: #fde68a;
+            padding: 1.7rem;
+            border-radius: 14px;
+            overflow-x: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+
+        .nav-bottom {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .nav-bottom a {
+            text-decoration: none;
+            font-weight: 700;
+            color: #92400e;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #eab308;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin: 1.5rem;
+                padding: 2.2rem;
+            }
+
+            h1 {
+                font-size: 2.1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<main>
+
+    <a href="../index.html" class="back-link">
+        ← Kembali ke Daftar Materi
+    </a>
+
+    <div class="page-header">
+        <div class="badge">Pertemuan 10</div>
+        <h1>Database MySQL</h1>
+        <p class="subtitle">
+            Pertemuan ini membahas konsep <strong>database relasional</strong>,
+            dasar bahasa <strong>SQL</strong>, serta integrasi database
+            <strong>MySQL</strong> dengan PHP menggunakan MySQLi.
+        </p>
+    </div>
+
+    <!-- Konsep Database -->
+    <section class="materi-section">
+        <h2>Konsep Database Relasional</h2>
+        <p>
+            Database relasional menyimpan data dalam bentuk tabel
+            yang saling berelasi menggunakan primary key dan foreign key.
+            Model ini memastikan konsistensi dan integritas data.
+        </p>
+    </section>
+
+    <!-- SQL Dasar -->
+    <section class="materi-section">
+        <h2>SQL Dasar (SELECT, INSERT, dll)</h2>
+        <p>
+            SQL (Structured Query Language) digunakan untuk mengelola
+            dan memanipulasi data di dalam database relasional.
+        </p>
+
+        <div class="code-title">Source Code (SQL):</div>
+        <pre class="code-block">
+SELECT * FROM mahasiswa;
+
+INSERT INTO mahasiswa (nama, jurusan)
+VALUES ('Agustra Kenaditor Daeli', 'Teknik Informatika');
+
+UPDATE mahasiswa
+SET jurusan = 'Sistem Informasi'
+WHERE id = 1;
+
+DELETE FROM mahasiswa
+WHERE id = 1;
+        </pre>
+    </section>
+
+    <!-- MySQLi -->
+    <section class="materi-section">
+        <h2>PHP MySQLi</h2>
+        <p>
+            MySQLi adalah ekstensi PHP untuk berkomunikasi
+            dengan database MySQL secara procedural atau OOP.
+        </p>
+
+        <div class="code-title">Source Code (PHP):</div>
+        <pre class="code-block">
+&lt;?php
+$koneksi = mysqli_connect("localhost", "root", "", "kampus");
+
+if (!$koneksi) {
+    die("Koneksi gagal");
+}
+?&gt;
+        </pre>
+    </section>
+
+    <!-- CRUD -->
+    <section class="materi-section">
+        <h2>CRUD Operations</h2>
+        <p>
+            CRUD adalah operasi dasar database:
+            Create, Read, Update, dan Delete.
+        </p>
+
+        <div class="code-title">Source Code (PHP - INSERT):</div>
+        <pre class="code-block">
+&lt;?php
+$query = "INSERT INTO mahasiswa (nama, jurusan)
+          VALUES ('Budi', 'Informatika')";
+mysqli_query($koneksi, $query);
+?&gt;
+        </pre>
+    </section>
+
+    <!-- Normalisasi -->
+    <section class="materi-section">
+        <h2>Database Normalization</h2>
+        <p>
+            Normalisasi adalah proses penyusunan struktur tabel
+            untuk mengurangi redundansi data dan meningkatkan
+            integritas database (1NF, 2NF, 3NF).
+        </p>
+    </section>
+
+    <div class="nav-bottom">
+        <a href="pertemuan-9.html">← Pertemuan 9</a>
+        <a href="pertemuan-11.html">Pertemuan 11 →</a>
+    </div>
+
+</main>
+
+<footer>
+    &copy; 2026 Materi Pemrograman Web — Database MySQL
+</footer>
+
+</body>
+</html>
