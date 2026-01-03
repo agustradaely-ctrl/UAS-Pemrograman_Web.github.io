@@ -24,7 +24,7 @@ const daftarMateri = [
             "Audio dan Video HTML5",
             "Canvas Dasar"
         ],
-        link: "pertemuan/pertemuan-2.html"
+        link: "pertemuan-2.html"
     },
     {
         id: 3,
@@ -37,7 +37,7 @@ const daftarMateri = [
             "CSS Grid",
             "Transition & Animation"
         ],
-        link: "pertemuan/pertemuan-3.html"
+        link: "pertemuan-3.html"
     },
     {
         id: 4,
@@ -50,7 +50,7 @@ const daftarMateri = [
             "Perulangan (for, while)",
             "Function dan Scope"
         ],
-        link: "pertemuan/pertemuan-4.html"
+        link: "pertemuan-4.html"
     },
     {
         id: 5,
@@ -63,7 +63,7 @@ const daftarMateri = [
             "Event Handling",
             "Membuat Elemen Dinamis"
         ],
-        link: "pertemuan/pertemuan-5.html"
+        link: "pertemuan-5.html"
     },
     {
         id: 6,
@@ -76,7 +76,7 @@ const daftarMateri = [
             "Flexible Images",
             "Testing Responsiveness"
         ],
-        link: "pertemuan/pertemuan-6.html"
+        link: "pertemuan-6.html"
     },
     {
         id: 7,
@@ -89,7 +89,7 @@ const daftarMateri = [
             "Customizing Bootstrap",
             "Bootstrap Icons"
         ],
-        link: "pertemuan/pertemuan-7.html"
+        link: "pertemuan-7.html"
     },
     {
         id: 8,
@@ -102,7 +102,7 @@ const daftarMateri = [
             "Array dan Looping",
             "Function PHP"
         ],
-        link: "pertemuan/pertemuan-8.html"
+        link: "pertemuan-8.html"
     },
     {
         id: 9,
@@ -115,7 +115,7 @@ const daftarMateri = [
             "Sanitasi Input",
             "File Upload"
         ],
-        link: "pertemuan/pertemuan-9.html"
+        link: "pertemuan-9.html"
     },
     {
         id: 10,
@@ -128,7 +128,7 @@ const daftarMateri = [
             "CRUD Operations",
             "Database Normalization"
         ],
-        link: "pertemuan/pertemuan-10.html"
+        link: "pertemuan-10.html"
     },
     {
         id: 11,
@@ -141,7 +141,7 @@ const daftarMateri = [
             "Login/Logout System",
             "Security Considerations"
         ],
-        link: "pertemuan/pertemuan-11.html"
+        link: "pertemuan-11.html"
     },
     {
         id: 12,
@@ -154,7 +154,7 @@ const daftarMateri = [
             "Membuat API Sederhana",
             "API Consumption dengan JavaScript"
         ],
-        link: "pertemuan/pertemuan-12.html"
+        link: "pertemuan-12.html"
     },
     {
         id: 13,
@@ -167,7 +167,7 @@ const daftarMateri = [
             "Promises & Async/Await",
             "Modules"
         ],
-        link: "pertemuan/pertemuan-13.html"
+        link: "pertemuan-13.html"
     },
     {
         id: 14,
@@ -180,9 +180,10 @@ const daftarMateri = [
             "Backend Integration",
             "Deployment Preparation"
         ],
-        link: "pertemuan/pertemuan-14.html"
+        link: "pertemuan-14.html"
     }
 ];
+
 
 // Fungsi untuk Menampilkan Kartu Materi ke Halaman
 function tampilkanMateri() {
@@ -246,3 +247,4 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Website materi kuliah siap!');
 
 });
+
