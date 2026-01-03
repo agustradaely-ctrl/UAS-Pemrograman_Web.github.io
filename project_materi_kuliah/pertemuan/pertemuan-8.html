@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Pertemuan 8 – PHP Dasar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font & Icon -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            color: #064e3b;
+        }
+
+        header {
+            background: #065f46;
+            padding: 1rem 2rem;
+        }
+
+        header a {
+            color: #ecfdf5;
+            text-decoration: none;
+            font-weight: 600;
+            margin-right: 1.5rem;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 3rem auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #047857;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 0.4rem 1.4rem;
+            border-radius: 999px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            margin: 0.5rem 0;
+            font-size: 2.6rem;
+        }
+
+        .materi-section {
+            margin: 3rem 0;
+        }
+
+        .materi-section h2 {
+            border-left: 6px solid #10b981;
+            padding-left: 1rem;
+            color: #065f46;
+        }
+
+        .materi-section p {
+            line-height: 1.8;
+            margin-top: 1rem;
+        }
+
+        .code-title {
+            margin-top: 1.5rem;
+            font-weight: 600;
+            color: #047857;
+        }
+
+        pre.code-block {
+            background: #022c22;
+            color: #d1fae5;
+            padding: 1.5rem;
+            border-radius: 10px;
+            overflow-x: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
+
+        .nav-bottom {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid #d1fae5;
+        }
+
+        .nav-bottom a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #047857;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #065f46;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin: 1.5rem;
+                padding: 2rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a href="../index.html">Pemrograman Web</a>
+    <a href="../index.html#materi">Daftar Materi</a>
+</header>
+
+<main>
+
+    <a href="../index.html" class="back-link">
+        ← Kembali ke Daftar Materi
+    </a>
+
+    <div class="page-header">
+        <div class="badge">Pertemuan 8</div>
+        <h1>PHP Dasar</h1>
+        <p>
+            Pengenalan pemrograman <strong>server-side</strong> menggunakan PHP
+            untuk memproses data dan menghasilkan halaman web dinamis.
+        </p>
+    </div>
+
+    <!-- Sintaks Dasar -->
+    <section class="materi-section">
+        <h2>Sintaks Dasar PHP</h2>
+        <p>
+            PHP adalah bahasa pemrograman server-side yang dieksekusi di server
+            dan hasilnya dikirim ke browser dalam bentuk HTML.
+            Kode PHP ditulis di dalam tag <code>&lt;?php ... ?&gt;</code>.
+        </p>
+
+        <div class="code-title">Source Code:</div>
+        <pre class="code-block">
+&lt;?php
+echo "Hello, World!";
+?&gt;
+        </pre>
+    </section>
+
+    <!-- Variable -->
+    <section class="materi-section">
+        <h2>Variable dan Tipe Data</h2>
+        <p>
+            Variabel dalam PHP diawali dengan tanda <code>$</code>.
+            PHP bersifat dynamically typed, artinya tipe data ditentukan saat runtime.
+        </p>
+
+        <div class="code-title">Source Code:</div>
+        <pre class="code-block">
+&lt;?php
+$nama = "Agustra Kenaditor Daeli";
+$umur = 22;
+$isMahasiswa = true;
+?&gt;
+        </pre>
+    </section>
+
+    <!-- Control Structures -->
+    <section class="materi-section">
+        <h2>Control Structures</h2>
+        <p>
+            Control structure digunakan untuk mengatur alur program,
+            seperti pengambilan keputusan menggunakan <code>if</code> atau <code>switch</code>.
+        </p>
+
+        <div class="code-title">Source Code:</div>
+        <pre class="code-block">
+&lt;?php
+$nilai = 85;
+
+if ($nilai &gt;= 75) {
+    echo "Lulus";
+} else {
+    echo "Tidak Lulus";
+}
+?&gt;
+        </pre>
+    </section>
+
+    <!-- Array & Loop -->
+    <section class="materi-section">
+        <h2>Array dan Looping</h2>
+        <p>
+            Array digunakan untuk menyimpan banyak data dalam satu variabel,
+            sedangkan looping digunakan untuk mengulang proses.
+        </p>
+
+        <div class="code-title">Source Code:</div>
+        <pre class="code-block">
+&lt;?php
+$buah = ["Apel", "Jeruk", "Mangga"];
+
+foreach ($buah as $item) {
+    echo $item;
+}
+?&gt;
+        </pre>
+    </section>
+
+    <!-- Function -->
+    <section class="materi-section">
+        <h2>Function PHP</h2>
+        <p>
+            Function digunakan untuk mengelompokkan kode agar dapat digunakan kembali
+            dan membuat program lebih terstruktur.
+        </p>
+
+        <div class="code-title">Source Code:</div>
+        <pre class="code-block">
+&lt;?php
+function salam($nama) {
+    return "Halo, " . $nama;
+}
+
+echo salam("Agustra");
+?&gt;
+        </pre>
+    </section>
+
+    <div class="nav-bottom">
+        <a href="pertemuan-7.html">← Pertemuan 7</a>
+        <a href="pertemuan-9.html">Pertemuan 9 →</a>
+    </div>
+
+</main>
+
+<footer>
+    &copy; 2025 Materi Pemrograman Web — PHP Dasar
+</footer>
+
+</body>
+</html>

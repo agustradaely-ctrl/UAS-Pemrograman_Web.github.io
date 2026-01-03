@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 3 - CSS3 Styling Modern</title>
+
+    <!-- Styling Khusus Pertemuan 3 -->
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #eef2ff, #f8fafc);
+            margin: 0;
+            color: #1f2937;
+        }
+
+        header {
+            background-color: #111827;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-container a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 2rem;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #2563eb;
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .materi-section {
+            background-color: #ffffff;
+            padding: 1.8rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .materi-section h2 {
+            margin-top: 0;
+            color: #1d4ed8;
+        }
+
+        .code-block {
+            background-color: #0f172a;
+            color: #e5e7eb;
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-size: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        pre {
+            margin: 0;
+        }
+
+        .nav-bottom {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 3rem;
+            font-weight: 600;
+        }
+
+        .nav-bottom a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #111827;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 3rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.6rem;
+            margin: 1rem 0;
+            color: #1e3a8a;
+        }
+
+        .page-header p {
+            max-width: 700px;
+            margin: auto;
+            color: #374151;
+            line-height: 1.7;
+        }
+
+    </style>
+</head>
+
+<body>
+<!-- Header Navigasi -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html">Pemrograman Web</a>
+            <a href="../index.html#materi">Daftar Materi</a>
+        </div>
+    </header>
+
+<main class="container">
+
+    <!-- Kembali ke Beranda Materi -->
+    <a href="../index.html" class="back-link">
+        ← Kembali ke Daftar Materi
+    </a>
+
+    <div class="page-header">
+    <span class="badge">Pertemuan 3</span>
+    <h1>CSS3: Styling Modern</h1>
+    <p>
+        Pertemuan ini membahas konsep styling modern menggunakan CSS3
+        untuk membangun tampilan website yang terstruktur, fleksibel,
+        dan interaktif.
+    </p>
+    </div>
+
+    <!-- 1. Selector dan Specificity -->
+    <section class="materi-section">
+        <h2>Selector dan Specificity</h2>
+        <p>
+            Selector digunakan untuk memilih elemen HTML yang akan diberi gaya.
+            Ketika beberapa aturan CSS diterapkan pada elemen yang sama,
+            browser akan menentukan prioritas berdasarkan <em>specificity</em>.
+        </p>
+        <p>
+            Urutan prioritas secara umum adalah:
+            <strong>Inline &gt; ID &gt; Class &gt; Elemen</strong>.
+            Pemahaman specificity penting untuk menghindari konflik gaya.
+        </p>
+    </section>
+
+    <!-- 2. Box Model & Positioning -->
+    <section class="materi-section">
+        <h2>Box Model & Positioning</h2>
+        <p>
+            Box Model menjelaskan bagaimana elemen HTML ditampilkan sebagai kotak
+            yang terdiri dari content, padding, border, dan margin.
+            Konsep ini penting untuk mengatur jarak dan ukuran elemen.
+        </p>
+        <p>
+            Selain itu, properti <code>position</code> digunakan untuk menentukan
+            bagaimana elemen diposisikan relatif terhadap dokumen atau elemen lain.
+        </p>
+
+        <p><strong>Contoh Source Code:</strong></p>
+        <pre class="code-block"><code>
+.box {
+    width: 200px;
+    padding: 20px;
+    border: 2px solid black;
+    margin: 15px;
+}
+
+.box-relative {
+    position: relative;
+    top: 10px;
+    left: 20px;
+}
+        </code></pre>
+    </section>
+
+    <!-- 3. Flexbox Layout -->
+    <section class="materi-section">
+        <h2>Flexbox Layout</h2>
+        <p>
+            Flexbox adalah sistem layout satu dimensi yang digunakan
+            untuk menyusun elemen dalam baris atau kolom secara fleksibel.
+            Flexbox sangat cocok untuk navigasi, card layout, dan komponen UI.
+        </p>
+
+        <p><strong>Contoh Source Code:</strong></p>
+        <pre class="code-block"><code>
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+        </code></pre>
+    </section>
+
+    <!-- 4. CSS Grid -->
+    <section class="materi-section">
+        <h2>CSS Grid</h2>
+        <p>
+            CSS Grid merupakan sistem layout dua dimensi yang memungkinkan
+            pengaturan baris dan kolom secara bersamaan.
+            Grid sangat efektif untuk layout halaman yang kompleks.
+        </p>
+    </section>
+
+    <!-- 5. Transition & Animation -->
+    <section class="materi-section">
+        <h2>Transition & Animation</h2>
+        <p>
+            CSS menyediakan fitur transition untuk membuat perubahan gaya
+            secara halus, serta animation untuk membuat animasi berbasis
+            keyframes tanpa JavaScript.
+        </p>
+
+        <p><strong>Contoh Source Code:</strong></p>
+        <pre class="code-block"><code>
+.button {
+    transition: background-color 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+        </code></pre>
+    </section>
+
+    <!-- Navigasi Bawah -->
+    <div class="nav-bottom">
+        <a href="pertemuan-2.html">← Pertemuan 2</a>
+        <a href="pertemuan-4.html">Pertemuan 4 →</a>
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 Materi Pemrograman Web — CSS3: Styling Modern</p>
+</footer>
+
+</body>
+</html>
