@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<base href="https://agustradaely-ctrl.github.io/UAS-Pemrograman_Web.github.io/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pertemuan 2: HTML5 – Struktur & Semantik</title>
+
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===== KHUSUS PERTEMUAN 2 ===== */
+
+.content-wrapper{
+    max-width:1100px;
+    margin:2.5rem auto 4rem;
+    padding:0 1.5rem;
+}
+
+.materi-content{
+    background:#ffffff;
+    padding:3rem;
+    border-radius:18px;
+    box-shadow:0 12px 40px rgba(0,0,0,.08);
+}
+
+/* HERO HEADER */
+.page-header{
+    text-align:center;
+    padding:3rem 2rem;
+    background:linear-gradient(135deg,#1e3c72,#2a5298);
+    border-radius:16px;
+    color:#fff;
+    margin-bottom:3rem;
+}
+
+.page-header h1{
+    font-size:2.6rem;
+    margin:1rem 0;
+}
+
+.page-header p{
+    font-size:1.1rem;
+    opacity:.9;
+}
+
+.pertemuan-badge{
+    display:inline-block;
+    background:rgba(255,255,255,.2);
+    padding:.6rem 1.8rem;
+    border-radius:50px;
+    font-weight:600;
+    letter-spacing:.5px;
+}
+
+/* TUJUAN */
+.tujuan-box{
+    background:#f4f9ff;
+    margin-top:2.5rem;
+    padding:2rem;
+    border-radius:12px;
+    border-left:6px solid #3498db;
+    text-align:left;
+}
+
+/* SECTION */
+.materi-section{
+    margin:3rem 0;
+}
+
+.materi-section h2{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:#2c3e50;
+    border-bottom:3px solid #3498db;
+    padding-bottom:.6rem;
+    margin-bottom:1.6rem;
+}
+
+/* CARD GRID */
+.card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1.5rem;
+}
+
+.card{
+    background:#fff;
+    padding:1.6rem;
+    border-radius:12px;
+    box-shadow:0 8px 25px rgba(0,0,0,.07);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card i{
+    font-size:2.2rem;
+    color:#3498db;
+    margin-bottom:.8rem;
+}
+
+/* CODE */
+.code-block{
+    background:#1e293b;
+    color:#e5e7eb;
+    padding:1.6rem;
+    border-radius:10px;
+    font-family:monospace;
+    font-size:.95rem;
+    overflow-x:auto;
+}
+
+/* HIGHLIGHT */
+.highlight-box{
+    background:#fff8e1;
+    border-left:6px solid #f1c40f;
+    padding:1.6rem;
+    border-radius:0 10px 10px 0;
+}
+
+/* LATIHAN */
+.latihan-box{
+    background:linear-gradient(135deg,#e8f5e9,#c8e6c9);
+    padding:2.2rem;
+    border-radius:14px;
+    border-left:6px solid #2ecc71;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    .materi-content{padding:1.6rem;}
+    .page-header h1{font-size:2rem;}
+}
+</style>
+</head>
+
+<body>
+    <!-- Konten Utama -->
+    <main class="container">
+         <!-- Header Navigasi -->
+    <header>
+        <div class="nav-container">
+            <a href="../index.html">Pemrograman Web</a>
+            <a href="../index.html#materi">Daftar Materi</a>
+        </div>
+    </header>
+        <div class="content-wrapper">
+            <a href="../index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Kembali ke Daftar Materi
+            </a>
+
+            <article class="materi-content">
+                <!-- Header -->
+                <header class="page-header">
+                    <div class="pertemuan-badge">Pertemuan 2</div>
+                    <h1>HTML5: Struktur & Semantik</h1>
+                    <p>Menguasai elemen HTML5 semantik untuk struktur website yang baik dan aksesibel.</p>
+                </header>
+
+                <!-- Doctype & Struktur Dasar -->
+                <section class="materi-section">
+                    <h2>Doctype & Struktur Dasar</h2>
+                    <p>
+                        DOCTYPE digunakan untuk mendefinisikan tipe dokumen agar browser
+                        memproses halaman sesuai standar HTML5.
+                    </p>
+
+                    <p><strong>Contoh Source Code:</strong></p>
+                    <pre class="code-block"><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;HTML5&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    Konten Website
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code></pre>
+                </section>
+
+                <!-- Elemen Semantik -->
+                <section class="materi-section">
+                    <h2>Elemen Semantik (header, nav, etc)</h2>
+                    <p>
+                        Elemen semantik memberikan makna pada struktur halaman dan membantu
+                        SEO serta aksesibilitas.
+                    </p>
+
+                    <p><strong>Contoh Source Code:</strong></p>
+                    <pre class="code-block"><code>
+&lt;header&gt;
+    Header
+&lt;/header&gt;
+
+&lt;nav&gt;
+    Menu
+&lt;/nav&gt;
+
+&lt;main&gt;
+    &lt;article&gt;
+        Konten
+    &lt;/article&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+    Footer
+&lt;/footer&gt;
+                    </code></pre>
+                </section>
+
+                <!-- Form dan Input -->
+                <section class="materi-section">
+                    <h2>Form dan Input Types Baru</h2>
+                    <p>
+                        HTML5 menyediakan tipe input baru yang mendukung validasi otomatis
+                        dan meningkatkan pengalaman pengguna.
+                    </p>
+
+                    <p><strong>Contoh Source Code:</strong></p>
+                    <pre class="code-block"><code>
+&lt;form&gt;
+    &lt;input type="email" placeholder="Email"&gt;
+    &lt;input type="date"&gt;
+    &lt;input type="number" min="0" max="100"&gt;
+    &lt;input type="color"&gt;
+
+    &lt;button&gt;Kirim&lt;/button&gt;
+&lt;/form&gt;
+                    </code></pre>
+                </section>
+
+                <!-- Audio dan Video -->
+                <section class="materi-section">
+                    <h2>Audio dan Video HTML5</h2>
+                    <p>
+                        HTML5 memungkinkan pemutaran audio dan video langsung di browser
+                        tanpa plugin tambahan.
+                    </p>
+
+                    <p><strong>Contoh Source Code:</strong></p>
+                    <pre class="code-block"><code>
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;
+
+&lt;video controls width="320"&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+                    </code></pre>
+                </section>
+
+                <!-- Canvas -->
+                <section class="materi-section">
+                    <h2>Canvas Dasar</h2>
+                    <p>
+                        Elemen canvas digunakan untuk menggambar grafik menggunakan JavaScript.
+                    </p>
+
+                    <p><strong>Contoh Source Code:</strong></p>
+                    <pre class="code-block"><code>
+&lt;canvas id="kanvas" width="200" height="100"&gt;&lt;/canvas&gt;
+
+&lt;script&gt;
+    const canvas = document.getElementById("kanvas");
+    const ctx = canvas.getContext("2d");
+
+    ctx.fillStyle = "blue";
+    ctx.fillRect(20, 20, 160, 60);
+&lt;/script&gt;
+                    </code></pre>
+                </section>
+
+                <!-- Navigasi -->
+                <div style="display:flex; justify-content:space-between; margin-top:3rem;">
+                    <a href="pertemuan-1.html">← Pertemuan 1</a>
+                    <a href="pertemuan-3.html">Pertemuan 3 →</a>
+                </div>
+            </article>
+        </div>
+    </main>
+s
+    <footer>
+    <p>&copy; 2025 Materi Pemrograman Web — HTML5: Struktur & Semantik</p>
+</footer>
+
+    <script>
+        document.getElementById("currentYear").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
