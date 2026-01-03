@@ -11,7 +11,7 @@ const daftarMateri = [
             "Tools Development Web",
             "Workflow Pengembangan"
         ],
-        link: "pertemuan/pertemuan-1.html"
+        link: "pertemuan-1.html"
     },
     {
         id: 2,
@@ -244,4 +244,5 @@ document.addEventListener('DOMContentLoaded', function() {
     setCurrentYear();  // 3. Set tahun di footer
 
     console.log('Website materi kuliah siap!');
+
 });
