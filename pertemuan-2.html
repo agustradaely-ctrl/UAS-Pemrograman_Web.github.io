@@ -1,245 +1,237 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<base href="https://agustradaely-ctrl.github.io/UAS-Pemrograman_Web.github.io/">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pertemuan 2: HTML5 – Struktur & Semantik</title>
+    <base href="https://agustradaely-ctrl.github.io/UAS-Pemrograman_Web.github.io/">
+    <meta charset="UTF-8">
+    <title>Pertemuan 2 – HTML5: Struktur & Semantik</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="../style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font & Icon -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<style>
-/* ===== KHUSUS PERTEMUAN 2 ===== */
-.content-wrapper{
-    max-width:1100px;
-    margin:2.5rem auto 4rem;
-    padding:0 1.5rem;
-}
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #e0f2fe, #f0f9ff);
+            color: #0f172a;
+        }
 
-.materi-content{
-    background:#ffffff;
-    padding:3rem;
-    border-radius:18px;
-    box-shadow:0 12px 40px rgba(0,0,0,.08);
-}
+        main {
+            max-width: 1100px;
+            margin: 3rem auto;
+            background: #ffffff;
+            padding: 3.5rem;
+            border-radius: 22px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+        }
 
-/* HERO HEADER */
-.page-header{
-    text-align:center;
-    padding:3rem 2rem;
-    background:linear-gradient(135deg,#1e3c72,#2a5298);
-    border-radius:16px;
-    color:#fff;
-    margin-bottom:3rem;
-}
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #0369a1;
+            font-weight: 600;
+            text-decoration: none;
+        }
 
-.page-header h1{
-    font-size:2.6rem;
-    margin:1rem 0;
-}
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
 
-.page-header p{
-    font-size:1.1rem;
-    opacity:.9;
-}
+        .badge {
+            display: inline-block;
+            background: linear-gradient(90deg, #0ea5e9, #38bdf8);
+            color: #ffffff;
+            padding: 0.5rem 1.8rem;
+            border-radius: 999px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
 
-.pertemuan-badge{
-    display:inline-block;
-    background:rgba(255,255,255,.2);
-    padding:.6rem 1.8rem;
-    border-radius:50px;
-    font-weight:600;
-    letter-spacing:.5px;
-}
+        h1 {
+            margin: 0.7rem 0;
+            font-size: 2.7rem;
+            color: #0f172a;
+        }
 
-/* TUJUAN */
-.tujuan-box{
-    background:#f4f9ff;
-    margin-top:2.5rem;
-    padding:2rem;
-    border-radius:12px;
-    border-left:6px solid #3498db;
-    text-align:left;
-}
+        .subtitle {
+            max-width: 760px;
+            margin: 0 auto;
+            line-height: 1.9;
+            color: #334155;
+        }
 
-/* SECTION */
-.materi-section{
-    margin:3rem 0;
-}
+        .materi-section {
+            margin: 3.8rem 0;
+        }
 
-.materi-section h2{
-    display:flex;
-    align-items:center;
-    gap:12px;
-    color:#2c3e50;
-    border-bottom:3px solid #3498db;
-    padding-bottom:.6rem;
-    margin-bottom:1.6rem;
-}
+        .materi-section h2 {
+            color: #0369a1;
+            border-left: 7px solid #0ea5e9;
+            padding-left: 1rem;
+            margin-bottom: 1rem;
+        }
 
-/* CARD GRID */
-.card-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:1.5rem;
-}
+        .materi-section p {
+            line-height: 1.9;
+            color: #1e293b;
+        }
 
-.card{
-    background:#fff;
-    padding:1.6rem;
-    border-radius:12px;
-    box-shadow:0 8px 25px rgba(0,0,0,.07);
-    transition:.3s;
-}
+        .code-title {
+            margin-top: 1.6rem;
+            font-weight: 600;
+            color: #075985;
+        }
 
-.card:hover{
-    transform:translateY(-6px);
-}
+        pre.code-block {
+            background: #0f172a;
+            color: #e0f2fe;
+            padding: 1.8rem;
+            border-radius: 14px;
+            overflow-x: auto;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            margin-top: 1rem;
+        }
 
-.card i{
-    font-size:2.2rem;
-    color:#3498db;
-    margin-bottom:.8rem;
-}
+        .nav-bottom {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 4.5rem;
+            padding-top: 2.5rem;
+            border-top: 1px solid #e5e7eb;
+        }
 
-/* CODE */
-.code-block{
-    background:#1e293b;
-    color:#e5e7eb;
-    padding:1.6rem;
-    border-radius:10px;
-    font-family:monospace;
-    font-size:.95rem;
-    overflow-x:auto;
-}
+        .nav-bottom a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #0369a1;
+        }
 
-/* HIGHLIGHT */
-.highlight-box{
-    background:#fff8e1;
-    border-left:6px solid #f1c40f;
-    padding:1.6rem;
-    border-radius:0 10px 10px 0;
-}
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #0369a1;
+            font-size: 0.9rem;
+        }
 
-/* LATIHAN */
-.latihan-box{
-    background:linear-gradient(135deg,#e8f5e9,#c8e6c9);
-    padding:2.2rem;
-    border-radius:14px;
-    border-left:6px solid #2ecc71;
-}
+        @media (max-width: 768px) {
+            main {
+                margin: 1.5rem;
+                padding: 2.2rem;
+            }
 
-/* RESPONSIVE */
-@media(max-width:768px){
-    .materi-content{padding:1.6rem;}
-    .page-header h1{font-size:2rem;}
-}
-</style>
+            h1 {
+                font-size: 2.1rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Konten Utama -->
-    <main class="container">
-        <div class="content-wrapper">
-            <a href="../index.html" class="back-link">
-                <i class="fas fa-arrow-left"></i> Kembali ke Daftar Materi
-            </a>
 
-            <article class="materi-content">
-                <!-- Header -->
-                <header class="page-header">
-                    <div class="pertemuan-badge">Pertemuan 2</div>
-                    <h1>HTML5: Struktur & Semantik</h1>
-                    <p>Menguasai elemen HTML5 semantik untuk struktur website yang baik dan aksesibel.</p>
-                </header>
+<main>
 
-                <!-- Doctype & Struktur Dasar -->
-                <section class="materi-section">
-                    <h2>Doctype & Struktur Dasar</h2>
-                    <p>
-                        DOCTYPE digunakan untuk mendefinisikan tipe dokumen agar browser
-                        memproses halaman sesuai standar HTML5.
-                    </p>
+    <a href="../index.html" class="back-link">
+        ← Kembali ke Daftar Materi
+    </a>
 
-                    <p><strong>Contoh Source Code:</strong></p>
-                    <pre class="code-block"><code>
+    <div class="page-header">
+        <div class="badge">Pertemuan 2</div>
+        <h1>HTML5: Struktur & Semantik</h1>
+        <p class="subtitle">
+            Pertemuan ini membahas konsep dasar HTML5 dengan fokus pada
+            <strong>struktur dokumen</strong> dan <strong>elemen semantik</strong>
+            agar website lebih terstruktur, mudah dipahami, dan aksesibel.
+        </p>
+    </div>
+
+    <!-- Doctype -->
+    <section class="materi-section">
+        <h2>Doctype & Struktur Dasar</h2>
+        <p>
+            DOCTYPE digunakan untuk memberi tahu browser bahwa dokumen
+            menggunakan standar HTML5. Struktur dasar HTML terdiri dari
+            elemen <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>,
+            dan <code>&lt;body&gt;</code>.
+        </p>
+
+        <div class="code-title">Contoh Source Code:</div>
+        <pre class="code-block">
 &lt;!DOCTYPE html&gt;
 &lt;html lang="id"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;HTML5&lt;/title&gt;
+    &lt;title&gt;Website HTML5&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
     Konten Website
 &lt;/body&gt;
 &lt;/html&gt;
-                    </code></pre>
-                </section>
+        </pre>
+    </section>
 
-                <!-- Elemen Semantik -->
-                <section class="materi-section">
-                    <h2>Elemen Semantik (header, nav, etc)</h2>
-                    <p>
-                        Elemen semantik memberikan makna pada struktur halaman dan membantu
-                        SEO serta aksesibilitas.
-                    </p>
+    <!-- Semantik -->
+    <section class="materi-section">
+        <h2>Elemen Semantik HTML5</h2>
+        <p>
+            Elemen semantik memberikan makna pada struktur halaman sehingga
+            membantu SEO dan aksesibilitas.
+        </p>
 
-                    <p><strong>Contoh Source Code:</strong></p>
-                    <pre class="code-block"><code>
+        <div class="code-title">Contoh Source Code:</div>
+        <pre class="code-block">
 &lt;header&gt;
-    Header
+    Header Website
 &lt;/header&gt;
 
 &lt;nav&gt;
-    Menu
+    Menu Navigasi
 &lt;/nav&gt;
 
 &lt;main&gt;
     &lt;article&gt;
-        Konten
+        Konten Utama
     &lt;/article&gt;
 &lt;/main&gt;
 
 &lt;footer&gt;
-    Footer
+    Footer Website
 &lt;/footer&gt;
-                    </code></pre>
-                </section>
+        </pre>
+    </section>
 
-                <!-- Form dan Input -->
-                <section class="materi-section">
-                    <h2>Form dan Input Types Baru</h2>
-                    <p>
-                        HTML5 menyediakan tipe input baru yang mendukung validasi otomatis
-                        dan meningkatkan pengalaman pengguna.
-                    </p>
+    <!-- Form -->
+    <section class="materi-section">
+        <h2>Form dan Input Types Baru</h2>
+        <p>
+            HTML5 menyediakan tipe input baru yang mendukung validasi otomatis
+            dan meningkatkan pengalaman pengguna.
+        </p>
 
-                    <p><strong>Contoh Source Code:</strong></p>
-                    <pre class="code-block"><code>
+        <div class="code-title">Contoh Source Code:</div>
+        <pre class="code-block">
 &lt;form&gt;
     &lt;input type="email" placeholder="Email"&gt;
     &lt;input type="date"&gt;
     &lt;input type="number" min="0" max="100"&gt;
     &lt;input type="color"&gt;
-
     &lt;button&gt;Kirim&lt;/button&gt;
 &lt;/form&gt;
-                    </code></pre>
-                </section>
+        </pre>
+    </section>
 
-                <!-- Audio dan Video -->
-                <section class="materi-section">
-                    <h2>Audio dan Video HTML5</h2>
-                    <p>
-                        HTML5 memungkinkan pemutaran audio dan video langsung di browser
-                        tanpa plugin tambahan.
-                    </p>
+    <!-- Media -->
+    <section class="materi-section">
+        <h2>Audio dan Video HTML5</h2>
+        <p>
+            HTML5 memungkinkan pemutaran audio dan video tanpa plugin tambahan.
+        </p>
 
-                    <p><strong>Contoh Source Code:</strong></p>
-                    <pre class="code-block"><code>
+        <div class="code-title">Contoh Source Code:</div>
+        <pre class="code-block">
 &lt;audio controls&gt;
     &lt;source src="audio.mp3" type="audio/mpeg"&gt;
 &lt;/audio&gt;
@@ -247,47 +239,41 @@
 &lt;video controls width="320"&gt;
     &lt;source src="video.mp4" type="video/mp4"&gt;
 &lt;/video&gt;
-                    </code></pre>
-                </section>
+        </pre>
+    </section>
 
-                <!-- Canvas -->
-                <section class="materi-section">
-                    <h2>Canvas Dasar</h2>
-                    <p>
-                        Elemen canvas digunakan untuk menggambar grafik menggunakan JavaScript.
-                    </p>
+    <!-- Canvas -->
+    <section class="materi-section">
+        <h2>Canvas Dasar</h2>
+        <p>
+            Elemen canvas digunakan untuk menggambar objek grafis
+            menggunakan JavaScript.
+        </p>
 
-                    <p><strong>Contoh Source Code:</strong></p>
-                    <pre class="code-block"><code>
+        <div class="code-title">Contoh Source Code:</div>
+        <pre class="code-block">
 &lt;canvas id="kanvas" width="200" height="100"&gt;&lt;/canvas&gt;
 
 &lt;script&gt;
-    const canvas = document.getElementById("kanvas");
-    const ctx = canvas.getContext("2d");
+const canvas = document.getElementById("kanvas");
+const ctx = canvas.getContext("2d");
 
-    ctx.fillStyle = "blue";
-    ctx.fillRect(20, 20, 160, 60);
+ctx.fillStyle = "blue";
+ctx.fillRect(20, 20, 160, 60);
 &lt;/script&gt;
-                    </code></pre>
-                </section>
+        </pre>
+    </section>
 
-                <!-- Navigasi -->
-                <div style="display:flex; justify-content:space-between; margin-top:3rem;">
-                    <a href="pertemuan-1.html">← Pertemuan 1</a>
-                    <a href="pertemuan-3.html">Pertemuan 3 →</a>
-                </div>
-            </article>
-        </div>
-    </main>
-s
-    <footer>
-    <p>&copy; 2025 Materi Pemrograman Web — HTML5: Struktur & Semantik</p>
+    <div class="nav-bottom">
+        <a href="pertemuan-1.html">← Pertemuan 1</a>
+        <a href="pertemuan-3.html">Pertemuan 3 →</a>
+    </div>
+
+</main>
+
+<footer>
+    &copy; 2025 Materi Pemrograman Web — HTML5: Struktur & Semantik
 </footer>
 
-    <script>
-        document.getElementById("currentYear").textContent = new Date().getFullYear();
-    </script>
 </body>
 </html>
-
-
