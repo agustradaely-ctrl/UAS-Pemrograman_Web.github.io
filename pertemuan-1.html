@@ -9,6 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         /* Styling khusus halaman detail */
+        html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+        }
+
         .content-wrapper {
             max-width: 1000px;
             margin: 2rem auto 4rem;
@@ -201,7 +206,8 @@
         
         .tool-list {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            max-width: 100%;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 1rem;
             margin: 1.5rem 0;
         }
@@ -229,21 +235,21 @@
         body footer {
             width: 100%;
             display: block;
-        
+
             /* posisi & perataan */
             text-align: center !important;
             margin-left: auto;
             margin-right: auto;
-        
+
             /* jarak dari konten */
             margin-top: 4rem;
-        
+
             /* warna tema putih–biru */
             background: linear-gradient(90deg, #f8fbff, #e6f2ff);
             border-top: 1px solid #cfe3ff;
             padding: 1.6rem 1rem;
         }
-        
+
         /* teks footer */
         body footer p {
             margin: 0;
@@ -251,7 +257,7 @@
             font-weight: 500;
             color: #1e3a8a;
         }
-        
+
         /* teks tambahan (jika ada) */
         body footer .hosting-info {
             margin-top: 0.4rem;
@@ -259,6 +265,7 @@
             color: #3b82f6;
         }
 
+        
         
         /* Responsive untuk halaman detail */
         @media (max-width: 768px) {
