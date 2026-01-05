@@ -6,17 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pertemuan 6 - Responsive Web Design</title>
 
-    <!-- Styling Khusus Pertemuan 6 -->
+  
+    <!-- Styling Khusus Pertemuan 3 -->
     <style>
         body {
+            font-family: "Segoe UI", sans-serif;
+            background: linear-gradient(135deg, #eef2ff, #f8fafc);
             margin: 0;
-            font-family: "Poppins", sans-serif;
-            background: linear-gradient(135deg, #fff7ed, #fde68a);
-            color: #3f3f46;
+            color: #1f2937;
         }
+
         header {
-            background: linear-gradient(90deg, #f97316, #fb7185);
-            padding: 1.2rem 0;
+            background-color: #111827;
+            padding: 1rem 0;
         }
 
         .nav-container {
@@ -29,7 +31,7 @@
         }
 
         .nav-container a {
-            color: #ffffff;
+            color: #fff;
             text-decoration: none;
             font-weight: 600;
         }
@@ -37,75 +39,48 @@
         .container {
             max-width: 1000px;
             margin: auto;
-            padding: 3rem 2rem;
+            padding: 2rem;
         }
 
         .back-link {
             display: inline-block;
-            margin-bottom: 2rem;
-            color: #ea580c;
-            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: #2563eb;
             text-decoration: none;
-        }
-
-        .page-header {
-            text-align: center;
-            margin-bottom: 4rem;
+            font-weight: 600;
         }
 
         .badge {
             display: inline-block;
-            background-color: #ea580c;
-            color: white;
-            padding: 0.4rem 1.1rem;
-            border-radius: 999px;
+            background-color: #2563eb;
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
             font-size: 0.9rem;
-        }
-
-        .page-header h1 {
-            font-size: 2.7rem;
-            margin: 1rem 0;
-            color: #9a3412;
-        }
-
-        .page-header p {
-            max-width: 780px;
-            margin: auto;
-            line-height: 1.9;
-            color: #7c2d12;
+            margin-bottom: 1rem;
         }
 
         .materi-section {
             background-color: #ffffff;
-            padding: 2.2rem;
-            margin-bottom: 2.8rem;
-            border-radius: 16px;
-            box-shadow: 0 15px 40px rgba(249, 115, 22, 0.25);
+            padding: 1.8rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
         }
 
         .materi-section h2 {
             margin-top: 0;
-            color: #ea580c;
-        }
-
-        .materi-section p {
-            line-height: 1.8;
-        }
-
-        .code-title {
-            margin-top: 1.5rem;
-            font-weight: 600;
-            color: #9a3412;
+            color: #1d4ed8;
         }
 
         .code-block {
-            background-color: #18181b;
-            color: #f4f4f5;
-            padding: 1.3rem;
-            border-radius: 12px;
-            margin-top: 0.7rem;
+            background-color: #0f172a;
+            color: #e5e7eb;
+            padding: 1rem;
+            border-radius: 8px;
             overflow-x: auto;
             font-size: 0.9rem;
+            margin-top: 1rem;
         }
 
         pre {
@@ -115,22 +90,41 @@
         .nav-bottom {
             display: flex;
             justify-content: space-between;
-            margin-top: 4rem;
+            margin-top: 3rem;
             font-weight: 600;
         }
 
         .nav-bottom a {
+            color: #2563eb;
             text-decoration: none;
-            color: #ea580c;
         }
 
         footer {
-            background-color: #9a3412;
-            color: white;
+            background-color: #111827;
+            color: #fff;
             text-align: center;
-            padding: 1.3rem;
-            margin-top: 4rem;
+            padding: 1rem;
+            margin-top: 3rem;
         }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-header h1 {
+            font-size: 2.6rem;
+            margin: 1rem 0;
+            color: #1e3a8a;
+        }
+
+        .page-header p {
+            max-width: 700px;
+            margin: auto;
+            color: #374151;
+            line-height: 1.7;
+        }
+
     </style>
 </head>
 
@@ -138,7 +132,7 @@
 <main class="container">
 
     <!-- Kembali -->
-    <a href="index.html" class="back-link">
+    <a href="../index.html" class="back-link">
         ← Kembali ke Daftar Materi
     </a>
 
@@ -242,5 +236,3 @@ img {
 
 </body>
 </html>
-
-
